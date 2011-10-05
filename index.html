@@ -298,17 +298,17 @@
         Type a route in to the box and click "simulate".  Some fun routes to try:
         <ul>
           <li>
-            <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">
+            <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/\s+/, ''); return match(this.text.replace(/\s+/, ''));">
               /articles
             </a>
           </li>
           <li>
-            <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">
+            <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/\s+/, ''); return match(this.text.replace(/\s+/, ''));">
               /articles/10/edit.json
             </a>
           </li>
           <li>
-            <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">
+            <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/\s+/, ''); return match(this.text.replace(/\s+/, ''));">
               /articles/new.
             </a>
           </li>
