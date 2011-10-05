@@ -1,34 +1,7 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <style>
-      body {
-        background-color: #333;
-        margin: 0;
-      }
-
-     #input div {
-        padding: 10px;
-      }
-
-      h1, h2 {
-        width: 100%;
-        text-align: center;
-      }
-
-     div#wrapper {
-        top: 0;
-        bottom: 0;
-        width: 1000px;
-        margin: auto;
-        background-color: #fff;
-        padding: 20px;
-     }
-
-      div#chart-2 {
-        height: 350px;
-      }
-    </style>
+    <link rel="stylesheet" href="fsm.css" media="all" />
   </head>
   <body>
     <div id="wrapper">
@@ -38,6 +11,22 @@
           Fix me!
         </a>
       </h2>
+      <div class="instruction form">
+        <p>
+        Type a route in to the box and click "simulate".
+        </p>
+        <form onsubmit="return match(this.route.value);">
+          <input type="text" size="30" name="route" value="/articles/new" />
+          <button>simulate</button>
+          <input type="reset" value="reset" onclick="return reset_graph();"/>
+        </form>
+        <p class="fun_routes">
+          Some fun routes to try: 
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles/10/edit.json</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles/new.</a>
+        </p>
+      </div>
       <div class='chart' id='chart-2'>
         <svg viewBox="0.00 0.00 1368.00 362.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="300">
           <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 358)">
@@ -292,46 +281,16 @@
           </g>
         </svg>
       </div>
-      <div id="input">
-        <div>
-          <form onsubmit="return match(this.route.value);">
-            <input type="text" size="30" name="route" value="/articles/new" />
-            <button>simulate</button>
-            <input type="reset" value="reset" onclick="return reset_graph();"/>
-          </form>
-        </div>
-        <div>
-          This is a FSM for a system that has the following routes:
-          <ul>
-            <li>/articles(.:format)</li>
-            <li>/articles/new(.:format)</li>
-            <li>/articles/:id/edit(.:format)</li>
-            <li>/articles/:id(.:format)</li>
-          </ul>
-          Type a route in to the box and click "simulate".  Some fun routes to try:
-          <ul>
-            <li>
-              <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">
-                /articles
-              </a>
-            </li>
-            <li>
-              <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">
-                /articles/10/edit.json
-              </a>
-            </li>
-            <li>
-              <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">
-                /articles/new.
-              </a>
-            </li>
-            <li>
-              <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">
-                /articles/new
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div class="instruction">
+        <p>
+        This is a FSM for a system that has the following routes:
+        </p>
+        <ul>
+          <li>/articles(.:format)</li>
+          <li>/articles/new(.:format)</li>
+          <li>/articles/:id/edit(.:format)</li>
+          <li>/articles/:id(.:format)</li>
+        </ul>
       </div>
     </div>
     <script src="d3.min.js" type="text/javascript"></script>
