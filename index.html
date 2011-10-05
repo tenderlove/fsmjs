@@ -22,9 +22,10 @@
         </form>
         <p class="fun_routes">
           Some fun routes to try: 
-          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles</a>
-          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles/10/edit.json</a>
-          <a href="#" onclick="document.forms[0].elements[0].value=this.text; return match(this.text);">/articles/new.</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">/articles</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">/articles/10/edit.json</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">/articles/new.</a>
+          <a href="#" onclick="document.forms[0].elements[0].value=this.text.replace(/^\s+|\s+$/g,''); return match(this.text.replace(/^\s+|\s+$/g,''));">/articles/new</a>
         </p>
       </div>
       <div class='chart' id='chart-2'>

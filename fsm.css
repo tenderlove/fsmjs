@@ -28,7 +28,7 @@ div#chart-2 {
 .instruction p { padding: 0 0 5px; }
 .instruction li { padding: 0 10px 5px; }
 
-.form { background: #EEE; padding: 20px 30px; border-radius: 5px; margin-left: auto; margin-right: auto; width: 480px; margin-bottom: 20px}
+.form { background: #EEE; padding: 20px 30px; border-radius: 5px; margin-left: auto; margin-right: auto; width: 500px; margin-bottom: 20px}
 .form p, .form form { text-align: center }
 .form form {padding: 0 10px 5px; }
 .form .fun_routes { font-size: 0.9em;}
